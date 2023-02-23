@@ -334,7 +334,7 @@
                 id="message"
               ></textarea>
             </div>
-            <input type="submit" value="submit" id="button" class="btn btn--theme contact__btn">
+            <input type="submit" value="Send Email" id="button" class="btn btn--theme contact__btn">
           </form>
         </div>
       </div>
@@ -425,10 +425,11 @@ document.getElementById('myForm')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       document.getElementById('button').value = 'Send Email';
-      alert('Sent!');
+      alert('Your email has been Sent!');
+      document.getElementById('myForm').resetForm()
     }, (err) => {
       document.getElementById('button').value = 'Send Email';
-      alert(JSON.stringify(err));
+      document.getElementById('myForm').resetForm()
     });
 });
     </script>
