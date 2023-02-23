@@ -426,10 +426,10 @@ document.getElementById('myForm')
     .then(() => {
       document.getElementById('button').value = 'Send Email';
       alert('Your email has been Sent!');
-      document.getElementById('myForm').resetForm()
+      document.getElementById('myForm').reset()
     }, (err) => {
       document.getElementById('button').value = 'Send Email';
-      document.getElementById('myForm').resetForm()
+      document.getElementById('myForm').reset()
     });
 });
     </script>
