@@ -299,7 +299,7 @@
           </span>
         </h2>
         <div class="contact__form-container">
-          <form action="#" class="contact__form">
+          <form action="#" class="contact__form" id="myForm">
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
               <input
@@ -412,8 +412,27 @@
 </script>
     <script type="text/javascript">
       (function () {
-        emailjs.init('<YOUR_PUBLIC_KEY>');
+        emailjs.init('0ZSbF9eyzQZDVClbz');
       })();
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_9zohu3y';
+   const templateID = 'template_0cpu4oq';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
     </script>
   </body>
 </html>
